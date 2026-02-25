@@ -89,9 +89,3 @@ You must create a free account and API key on the official TMDb website. Be sure
     The Movie Database (TMDb) for providing the movie data API.
 
     The React and Vite communities for great tooling and documentation.
-
-
-
-
-
-
