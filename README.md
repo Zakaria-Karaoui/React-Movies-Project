@@ -1,8 +1,8 @@
 ### Home Page
-![Home Page](screenshots/home-page.png)
+![Home Page](screenshots/home-page.PNG)
 
 ### Favorites Page
-![Favorites Page](screenshots/favorites-page.png)
+![Favorites Page](screenshots/favorites-page.PNG)
 
 # React Movies Project 🎬
 
