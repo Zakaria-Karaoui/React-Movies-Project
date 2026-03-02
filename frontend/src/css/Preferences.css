@@ -1,0 +1,221 @@
+/* ─── Container ─────────────────────────────────────────── */
+.preferences-container {
+  padding: 2rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+}
+
+.preferences-container h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.preferences-container .subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* ─── Each Section ───────────────────────────────────────── */
+.pref-section {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pref-section label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.pref-section label span {
+  font-weight: 400;
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+/* ─── Language Dropdown ──────────────────────────────────── */
+select {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #666;
+}
+
+/* ─── Genre Grid ─────────────────────────────────────────── */
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.genre-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  text-align: center;
+}
+
+.genre-btn:hover {
+  background-color: #444;
+}
+
+.genre-btn.selected {
+  background-color: #e50914;
+  border-color: #f40612;
+}
+
+/* ─── Year Range ─────────────────────────────────────────── */
+.year-range {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.year-range input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.year-range input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #666;
+}
+
+.year-range span {
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+/* ─── Popularity Buttons ─────────────────────────────────── */
+.popularity-slider {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pop-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  text-align: center;
+}
+
+.pop-btn:hover {
+  background-color: #444;
+}
+
+.pop-btn.selected {
+  background-color: #e50914;
+  border-color: #f40612;
+}
+
+/* ─── Adult Toggle ───────────────────────────────────────── */
+.adult-toggle {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.toggle.on  { background-color: #e50914; }
+.toggle.off { background-color: #333; }
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.toggle.on  .toggle-thumb { transform: translateX(4px); }
+.toggle.off .toggle-thumb { transform: translateX(0); }
+
+.toggle span {
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* ─── Submit Button ──────────────────────────────────────── */
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #e50914;
+  color: white;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+
+.submit-btn:hover {
+  background-color: #f40612;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 639px) {
+  .preferences-container {
+    padding: 1rem;
+  }
+
+  .popularity-slider {
+    flex-direction: column;
+  }
+
+  .adult-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .genre-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}

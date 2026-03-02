@@ -1,0 +1,224 @@
+/* ─── Container ─────────────────────────────────────────── */
+.rec-container {
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.rec-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+.rec-header h1 {
+  font-size: 1.8rem;
+}
+
+.back-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.back-btn:hover {
+  background-color: #444;
+}
+
+/* ─── Loading / Error ────────────────────────────────────── */
+.rec-loading,
+.rec-error {
+  text-align: center;
+  padding: 4rem 1rem;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.rec-error {
+  color: #e50914;
+}
+
+/* ─── Section Titles ─────────────────────────────────────── */
+.top3-section h2,
+.others-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+  padding: 0 0.5rem;
+  border-left: 4px solid #e50914;
+  padding-left: 0.75rem;
+}
+
+/* ─── Top 3 Grid ─────────────────────────────────────────── */
+.top3-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 0 0.5rem;
+}
+
+.top3-card {
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.top3-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Gold / Silver / Bronze borders */
+.top3-card.rank-1 { border-color: #FFD700; }
+.top3-card.rank-2 { border-color: #C0C0C0; }
+.top3-card.rank-3 { border-color: #CD7F32; }
+
+.rank-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: #e50914;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.rank-1 .rank-badge { background-color: #FFD700; color: #000; }
+.rank-2 .rank-badge { background-color: #C0C0C0; color: #000; }
+.rank-3 .rank-badge { background-color: #CD7F32; color: #000; }
+
+.top3-card img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.top3-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.top3-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ─── Movie Meta ─────────────────────────────────────────── */
+.movie-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.overview {
+  font-size: 0.85rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* ─── Others Grid ────────────────────────────────────────── */
+.others-section {
+  margin-top: 1rem;
+}
+
+.others-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.other-card {
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.other-card:hover {
+  transform: translateY(-4px);
+}
+
+.other-card img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.other-info {
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.other-info h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 639px) {
+  .rec-container {
+    padding: 1rem;
+  }
+
+  .rec-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .rec-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .others-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+/* Reuse MovieCard poster structure */
+.top3-card .movie-poster,
+.other-card .movie-poster {
+  position: relative;
+  overflow: hidden;
+}
+
+.top3-card .movie-overlay,
+.other-card .movie-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.top3-card .movie-poster:hover .movie-overlay,
+.other-card .movie-poster:hover .movie-overlay {
+  opacity: 1;
+}
