@@ -7,6 +7,7 @@ import Preferences from './pages/Preferences'
 import Recommendations from './pages/Recommendations'
 import { Routes, Route } from 'react-router-dom'
 import { MovieProvider } from './contexts/MovieContext'
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </main>
         <Footer />
       </MovieProvider>
+      <Analytics/>
     </>
   )
 }
