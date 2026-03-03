@@ -1,6 +1,6 @@
 import './css/App.css'
 import NavBar from './components/NavBar'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 import Favorites from './pages/Favorites'
 import Home from './pages/Home'
 import Preferences from './pages/Preferences'
