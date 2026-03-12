@@ -4,8 +4,8 @@
 ### Favorites Page
 ![Favorites Page](screenshots/favorites-page.PNG)
 
-### Search Page
-![Search Page](screenshots/search-page.PNG)
+### Preferences Page
+![Preferences Page](screenshots/preferences-page.PNG)
 
 ### Recommendations Page
 ![Recommendations Page](screenshots/recommendations-page.PNG)
